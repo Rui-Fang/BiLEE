@@ -1,0 +1,58 @@
+exp_name: 
+exp_postfix: 
+project_suffix: TEST
+tags: ["SKIP","GEN"]
+gpu_no: [1]
+fp_16: 0
+
+mode: train_gen
+gen_alpha: 1.0
+cel_beta: 0.0
+num_train_epochs: 200
+
+gen_training: 0
+gen_beam_size: 20
+force_cache : 0
+
+test1000: 1
+wandb: 1
+log: 1
+
+# skip params
+decoder_skipping: 1
+use_skip_logits: 1
+beam_pruning: 0
+classifier_type: fixer_softmax_HW
+logits_fixer: 1
+fix_fixer: 0
+
+fixer_type: M
+fixer_midlayer_num: 2
+fixer_midlayer_dim: 512
+
+ckpt_monitor: val/oracle_skip_postion
+monitor_mode: min
+
+# inference
+num_return_sequences: 10
+exit_analysis: 1
+use_cache: 0
+force_cache: 0
+beam_pruning: 0
+
+# others
+model_info: large_no_adaptor
+train_batch_size: 256
+eval_batch_size: 16
+gradient_accumulation_steps: 1
+
+query_type: gtq
+aug_query: 0
+input_dropout: 0
+dropout_rate: 0.0
+Rdrop: 0
+
+trivia: 1
+nq: 0
+
+ckpt_path: 

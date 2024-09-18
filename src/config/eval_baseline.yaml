@@ -1,0 +1,49 @@
+exp_name: baseline
+exp_postfix: baseline
+project_suffix: TEST
+tags: ["SKIP"]
+gpu_no: [0]
+fp_16: 0
+
+mode: eval
+gen_training: 0
+gen_beam_size: 10
+force_cache : 0
+
+test1000: 0
+wandb: 0
+log: 1
+
+# skip params
+decoder_skipping: 0
+use_skip_logits: 1
+classifier_type: fixer_softmax
+logits_fixer: 1
+fix_fixer: 0
+
+fixer_type: M
+fixer_midlayer_num: 2
+fixer_midlayer_dim: 1024
+
+# inference
+num_return_sequences: 10
+exit_analysis: 0
+flops_profiling: 1
+use_cache: 1
+
+# others
+model_info: large_no_adaptor
+train_batch_size: 128
+eval_batch_size: 16
+gradient_accumulation_steps: 1
+
+query_type: gtq
+aug_query: 0
+input_dropout: 0
+dropout_rate: 0
+Rdrop: 0
+
+trivia: 0
+nq: 1
+
+ckpt_path: models/NQ_2D_large.ckpt
